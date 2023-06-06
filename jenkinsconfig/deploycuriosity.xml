@@ -21,7 +21,7 @@
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
     <org.jenkinsci.plugins.gogs.GogsProjectProperty plugin="gogs-webhook@1.0.15">
-      <gogsSecret>{AQAAABAAAAAQwxuJcJxMLKMe6caSAw54UhEYrKN7v6rmTTwaMhS0IJ4=}</gogsSecret>
+      <gogsSecret></gogsSecret>
       <gogsUsePayload>false</gogsUsePayload>
       <gogsBranchFilter></gogsBranchFilter>
     </org.jenkinsci.plugins.gogs.GogsProjectProperty>
@@ -58,7 +58,7 @@
       <submoduleCfg class="empty-list"/>
       <extensions/>
     </scm>
-    <scriptPath>./jenkins-config/deploycuriosity.groovy</scriptPath>
+    <scriptPath>deploycuriosity.groovy</scriptPath>
     <lightweight>true</lightweight>
   </definition>
   <triggers/>
