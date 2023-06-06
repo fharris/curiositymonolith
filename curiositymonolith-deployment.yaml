@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curiositymonolith-deployment
+  namespace: curiositymonolith
+spec:
+  selector:
+    matchLabels:
+      app: curiosity
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: curiosity
+    spec:
+      containers:
+      - name: curiosity
+        #image: fra.ocir.io/frsxwtjslf35/wikipedia/demo/curiositymonolith:latest
+        #image: eu-frankfurt-1.ocir.io/interactivetech/curiositymonolith:latest
+        image: fharris/curiosity:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8090
+        envFrom:
+          - secretRef:
+              name: curiositymonolith-mysql-db-secret
+          - configMapRef:
+              name: curiositymonolith-configmap
+      imagePullSecrets:
+      - name: ocirsecret
