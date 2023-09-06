@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-db-deployment
+  namespace: curiositymonolith
+spec:
+  selector:
+    matchLabels:
+      app: mysql-db
+  template:
+    metadata:
+      labels:
+        app: mysql-db
+    spec:
+      volumes:
+      - name: mysql-db-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+      containers:
+      - image: mysql:5.7
+        name: mysql-container
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-db-secret
+              key: pword
+        ports:
+        - containerPort: 3306
+          name: mysql-db
+        volumeMounts:
+        - name: mysql-db-persistent-storage
+          mountPath: /var/lib/mysql
