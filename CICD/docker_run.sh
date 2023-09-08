@@ -1,0 +1,1 @@
+docker run - name jenkins - rm -p 8081:8080 - env JENKINS_ADMIN_ID=admin - env JENKINS_ADMIN_PASSWORD=123 - env DOCKER_HOST=tcp://docker:2376 - env DOCKER_CERT_PATH=/certs/client - env DOCKER_TLS_VERIFY=1 - volume jenkins-docker-certs:/certs/client:ro - network jenkins jenkins:jcasc

@@ -1,0 +1,53 @@
+<list>
+  <com.cloudbees.plugins.credentials.domains.DomainCredentials plugin="credentials@1254.vb_96f366e7b_a_d">
+    <domain>
+      <specifications/>
+    </domain>
+    <credentials>
+      <org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl plugin="plain-credentials@143.v1b_df8b_d3b_e48">
+        <scope>GLOBAL</scope>
+        <id>jenkins-token-kubernetes</id>
+        <description>permanent token in kubernetes secret</description>
+        <secret>
+          <secret-redacted/>
+        </secret>
+      </org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl>
+      <com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
+        <scope>GLOBAL</scope>
+        <id>id-docker-registry</id>
+        <description></description>
+        <username>fharris</username>
+        <password>
+          <secret-redacted/>
+        </password>
+        <usernameSecret>false</usernameSecret>
+      </com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
+      <org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl plugin="plain-credentials@143.v1b_df8b_d3b_e48">
+        <scope>GLOBAL</scope>
+        <id>mysql-password</id>
+        <description></description>
+        <secret>
+          <secret-redacted/>
+        </secret>
+      </org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl>
+      <com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
+        <scope>GLOBAL</scope>
+        <id>id-mysql</id>
+        <description></description>
+        <username>curiosity</username>
+        <password>
+          <secret-redacted/>
+        </password>
+        <usernameSecret>false</usernameSecret>
+      </com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
+      <org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl plugin="plain-credentials@143.v1b_df8b_d3b_e48">
+        <scope>GLOBAL</scope>
+        <id>id-mysql-host</id>
+        <description>id-mysql-host</description>
+        <secret>
+          <secret-redacted/>
+        </secret>
+      </org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl>
+    </credentials>
+  </com.cloudbees.plugins.credentials.domains.DomainCredentials>
+</list>
