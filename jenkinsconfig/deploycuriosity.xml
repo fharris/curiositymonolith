@@ -58,7 +58,7 @@
       <submoduleCfg class="empty-list"/>
       <extensions/>
     </scm>
-    <scriptPath>deploycuriosity.groovy</scriptPath>
+    <scriptPath>jenkinsconfig/deploycuriosity.groovy</scriptPath>
     <lightweight>true</lightweight>
   </definition>
   <triggers/>
