@@ -4,6 +4,6 @@ metadata:
   name: jenkins-cluster-role
 rules:
 - apiGroups: [""]
-  resources: ["namespaces","persistentvolumes","persistentvolumeclaims"]
+  resources: ["namespaces","persistentvolumes","persistentvolumeclaims","pods/exec"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 
