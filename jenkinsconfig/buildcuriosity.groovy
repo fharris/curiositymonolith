@@ -3,7 +3,7 @@
 pipeline {
   environment {
     registry = "fharris/curiosity"
-    registry2 = "localhost:5000/curiosity"
+    registry2 = "172.18.0.6:5000/curiosity"
     registryCredential = 'id-docker-registry'
     imageLatest = ''
     MYSQL_CREDENTIALS = credentials('id-mysql')
