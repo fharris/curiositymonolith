@@ -45,8 +45,7 @@
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>http://gogs:3000/fernando-harris/curiositymonolith.git</url>
-          <credentialsId>jenkins-gogs-ssh</credentialsId>
+          <url>http://gogs:3000/gogs-user/curiositymonolith.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
