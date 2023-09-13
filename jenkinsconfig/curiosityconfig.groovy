@@ -41,6 +41,7 @@ pipeline {
             sh "kubectl apply -f kubernetesconfig/curiositymonolith-namespace.yaml"
             sh "kubectl apply -f databaseconfig/mysql-db-secret.yaml"
             sh "kubectl apply -f databaseconfig/mysql-persistent-deploy.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-persistentvolume.yaml"
             sh "kubectl apply -f databaseconfig/mysql-persistentvolumeclaim.yaml"
             sh "kubectl apply -f databaseconfig/mysql-persistent-deploy.yaml"
             sh "kubectl apply -f databaseconfig/mysql-db-service.yaml"
