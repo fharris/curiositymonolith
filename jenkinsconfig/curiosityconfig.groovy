@@ -38,13 +38,13 @@ pipeline {
       stage('Configurion in Kubernetes') {
       steps {
         withKubeConfig( credentialsId: 'jenkins-token-kubernetes', serverUrl: kubernetes_proxy ) {
-            sh "kubectl apply -f curiositymonolith-namespace.yaml"
-            sh "kubectl apply -f mysql-db-secret.yaml"
-            sh "kubectl apply -f mysql-persistentvolume.yaml"
-            sh "kubectl apply -f mysql-persistentvolumeclaim.yaml"
-            sh "kubectl apply -f mysql-persistent-deploy.yaml"
-            sh "kubectl apply -f mysql-db-service.yaml"
-            sh "kubectl apply -f curiositymonolith-service-loadbalancer.yaml"
+            sh "kubectl apply -f kubernetesconfig/curiositymonolith-namespace.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-db-secret.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-persistent-deploy.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-persistentvolumeclaim.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-persistent-deploy.yaml"
+            sh "kubectl apply -f databaseconfig/mysql-db-service.yaml"
+            sh "kubectl apply -f kubernetesconfig/curiositymonolith-service-loadbalancer.yaml"
             sh 'kubectl -n curiositymonolith create secret generic curiositymonolith-mysql-db-secret --from-literal=SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --from-literal=SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR'
         }
       }
