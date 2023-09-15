@@ -57,7 +57,7 @@ pipeline {
       }
     }
     */
-    stage('Pushing image to registry2 local') {
+    stage('Pushing image to local registry ') {
       steps{
         script {
           //docker.withRegistry( '', registryCredential ) {

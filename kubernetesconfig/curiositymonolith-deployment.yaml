@@ -27,5 +27,3 @@ spec:
               name: curiositymonolith-mysql-db-secret
           - configMapRef:
               name: curiositymonolith-configmap
-      imagePullSecrets:
-      - name: ocirsecret
