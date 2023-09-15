@@ -6,7 +6,7 @@ pipeline {
     registryCredential = 'id-docker-registry'
     dockerImageBuild = ''
     dockerImageLatest = ''
-    kubernetes_proxy = 'https://192.168.5.15:6443'
+    kubernetes_proxy = $KUBERNETES_ENDPOINT
   }
   agent any
   stages{
