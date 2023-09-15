@@ -34,6 +34,7 @@ pipeline {
       stage('Deployment  to Kubernetes') {
       steps {
         withKubeConfig( credentialsId: 'jenkins-token-kubernetes', serverUrl: kubernetes_proxy ) {
+            sh "echo 'KUBERNETES ENDPOINT=$KUBERNETES_ENDPOINT'"
             sh "kubectl apply -f kubernetesconfig/curiositymonolith-configmap.yaml"
             sh "kubectl describe configmap curiositymonolith-configmap -n curiositymonolith"
             sh "kubectl apply -f  kubernetesconfig/curiositymonolith-deployment.yaml -n curiositymonolith"
