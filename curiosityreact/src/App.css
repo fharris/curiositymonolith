@@ -1,0 +1,45 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table, th, td {
+    border: 1px solid;
+  }
+
+  input[type=text] {
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border: none;
+border-color: transparent;
+  }
+
+
+  .display-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .challenge {
+    font-size: 4em;
+  }
+  
+  .badge {
+    font-size: x-small;
+    border: 2px solid dodgerblue;
+    border-radius: 4px;
+    padding: 0.2em;
+    margin: 0.1em;
+  }
+  
+
+
+
+  th {
+    padding-right: 0.5em;
+    border-bottom: solid 5px;
+    border: 1px solid rgb(90, 7, 7);
+  }
