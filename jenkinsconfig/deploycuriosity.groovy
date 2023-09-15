@@ -2,10 +2,10 @@
 
 pipeline {
   environment {
-    registry = "fharris/curiosity"
-    registryCredential = 'id-docker-registry'
-    dockerImageBuild = ''
-    dockerImageLatest = ''
+    //registry = "fharris/curiosity"
+    //registryCredential = 'id-docker-registry'
+    //dockerImageBuild = ''
+    //dockerImageLatest = ''
     kubernetes_proxy = "${env.KUBERNETES_ENDPOINT}"
   }
   agent any
@@ -28,9 +28,7 @@ pipeline {
         sh 'ls -ltra'
       }
     }
-
-
-      
+   
       stage('Deployment  to Kubernetes') {
       steps {
         withKubeConfig( credentialsId: 'jenkins-token-kubernetes', serverUrl: kubernetes_proxy ) {
