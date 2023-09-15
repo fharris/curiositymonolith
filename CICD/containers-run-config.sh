@@ -37,23 +37,14 @@ echo Configuring Gogs...
 
 echo Starting Docker-Dind
 docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=/certs   --volume jenkins-docker-certs:/certs/client --volume jenkins-data:/var/jenkins_home  -p 2376:2376  docker:dind --storage-driver overlay2
-
-#docker exec -it docker-dind sh -c 'mkdir /etc/docker; echo '{"insecure-registries":["172.18.0.6:5000"]}' > /etc/docker/daemon.json ; cat /etc/docker/daemon.json; docker info'
 docker exec -it docker-dind sh -c 'mkdir /etc/docker;'
 docker cp CICD/daemon.json docker-dind:/etc/docker   
 docker restart docker-dind
 sleep 15;
 docker exec -it docker-dind sh -c 'docker info'
 
-
-#docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=""   --volume jenkins-data:/var/jenkins_home  -p 2376:237  docker:19.03.0-dind --storage-driver overlay2
-#docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=""   --volume jenkins-data:/var/jenkins_home  -p 2376:2376  docker:19.03.0-dind --storage-driver overlay2
-#docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=""   --volume jenkins-data:/var/jenkins_home  -p 2375:2375  docker:19.03.0-dind --storage-driver overlay2
-#docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=""   --volume jenkins-data:/var/jenkins_home  -p 2376:2375  docker:19.03.0-dind --storage-driver overlay2
-#docker run --name docker-dind --restart on-failure --detach --privileged --network cloudnative --ip 172.18.0.4 --network-alias docker  --env DOCKER_TLS_CERTDIR=""   --volume jenkins-data:/var/jenkins_home  -p 2376:2376  docker:19.03.0-dind --storage-driver overlay2
-
 echo Starting Jenkins Container
-docker run --name jenkins --restart on-failure --detach  -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Xmx2048m -Djava.awt.headless=true" --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=123 --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-docker-certs:/certs/client:ro --volume jenkins-data:/var/jenkins_home --network cloudnative --ip 172.18.0.5 fharris/jenkinscicd:latest
+docker run --name jenkins --restart on-failure --detach  -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Xmx2048m -Djava.awt.headless=true" --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=123 --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-docker-certs:/certs/client:ro --volume jenkins-data:/var/jenkins_home --network cloudnative --ip 172.18.0.5 fharris/jenkinscicd:latest1
 
 
 echo Configuring Jenkins...

@@ -7,7 +7,8 @@ pipeline {
     dockerImageBuild = ''
     dockerImageLatest = ''
     MYSQL_CREDENTIALS = credentials('id-mysql')
-    kubernetes_proxy = 'https://192.168.5.15:6443'
+    //kubernetes_proxy = 'https://192.168.5.15:6443'
+    kubernetes_proxy = "${env.KUBERNETES_ENDPOINT}"
   }
   agent any
   stages{

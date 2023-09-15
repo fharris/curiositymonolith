@@ -38,6 +38,10 @@ jenkins:
       env:
       - key: "KUBERNETES_ENDPOINT"
         value: "https://192.168.5.15:6443"
+      - key: "REGISTRY_ENDPOINT"
+        value: "172.18.0.6:5000/curiosity"
+      - key: "MYSQL_NETWORK_IP"
+        value: "172.18.0.2"
   remotingSecurity:
     enabled: true
 security:

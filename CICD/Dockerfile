@@ -14,7 +14,7 @@ RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 USER jenkins
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV CASC_JENKINS_CONFIG /var/casc_home/casc.yaml
-COPY --chown=jenkins:jenkins plugins3.txt /usr/share/jenkins/ref/plugins.txt
+COPY --chown=jenkins:jenkins plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 COPY --chown=jenkins:jenkins casc.yaml /var/casc_home/casc.yaml
 COPY --chown=jenkins:jenkins jenkins-cli.jar /var/jenkins_home/jenkins-cli.jar

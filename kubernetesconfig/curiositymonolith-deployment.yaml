@@ -17,7 +17,8 @@ spec:
       - name: curiosity
         #image: fra.ocir.io/frsxwtjslf35/wikipedia/demo/curiositymonolith:latest
         #image: eu-frankfurt-1.ocir.io/interactivetech/curiositymonolith:latest
-        image: fharris/curiosity:latest
+        #image: fharris/curiosity:latest
+        image: localhost:5000/curiosity:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8090
