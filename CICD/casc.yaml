@@ -1,3 +1,26 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - string:
+          description: "permanent token in kubernetes secret"
+          id: "jenkins-token-kubernetes"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAOgEbJ8pr1PABwYT47jb+zTqWVxz37sg1QF2zXpbh9arNzYIxtt7wYb6VvDDJJLKs02YaLGV0WvVyjxBbSVL5xGSQ0yMeuJoo2Ms9I+oOJpTnycF1LUPujZw5GuJWC0v/8K/a4mNyvhpTv9+G5UP+lRifZTystH+YLaTXDjk7nIzpK/TsP4jQ/DPaE5pzyFRIUN4zU3ERQB2BIXNsLqCEfn2EvHmJCaVD5xy488h46XdjrzA1FS/Mt9YKy1oH6sEeJOBBaybpaLFe6sfby1l0/Bz614AkhzFzzFEOQWCB7FJeZNQ/AhY41tdBv3FNrmsT908b6O6T/tFKNFuiU4rOb4aY4Rd7JqMzO4lqGobfLnEcrqy4GIXUk1qcmDzXq6nerb5joHPoFJ2f3zcsVmGa2+Lvdi0sev2X08p/ZKfoJDSqjT/PEWQKwoEf0nMBS+P303aofr7jP03vUDId+MHmrBAriy1nfBCRa9v4cFQyOBem/GH1rht64exR8pWUYEU6xlyPYKEiTajfBKZWn7spJjwIGrFHY03bC/PSw8TFKbzZ2EphKUYqfvAAfghp+kNAZT8R8AmOAAANfNfU7knxSrBbVoWnEU52H516O15+tDo5F3vYULiDRiaCHbLJqrP7Wln281vYX9hris9wwVTrDr1/DiHmAMzvTKQjYA8QAugyXCXzbU96+VOdAtx37pL6ikBxrw7v0toF52TeQcDO1NL/6a+M1W/VkMy8u+T2uPCEC/chxegPdZ/r0/JpoXeRembJn0rof3kcU87uM/UeR4qiOWhFczqmJs33eXUDSzHlcn1sqzd6BhGbgPpA+9pZerdN1IsPs0r6QeR5dawfBi/Aug3MGUX/seSKdd3gi+zsYJRHOQTN8qGbgtxfY35CgIUWJ0/PpmnWK3YXTDW/4v8++2sffqwpEeAAmgnsbHATqvt/WVdx3hiIfqFYa0XLfymxdmuFfDaRfiIL6rhm4PZ4UzxPl8CX5KH2XcreuIkhgyHZ9i5yVFubedqqhammxNTI0Z23bkJl4J5NLkSF4uFI5aOlm/IoRKZy89Kn175H3Uvi3UhBSMkCZMq8oREkSgKiMqlAkq62t0PsUH9Hg/BhLiopkLxRNB8VTLSpcJVWI8vnwku7KxmZO0J3wIbx/ApXC9OX3otG46XAzM7MaUYOv+2SbBKEDy/KGvXOL7SY6Tz7wqlpB10zOP507LNy4DhwlPoV/cP2oqWx1dWub4IvuOqq0/CwOFc1JAc99OF1I=}"
+      - string:
+          id: "mysql-password"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAQuRaJfNEOiIraX3eZeFIc1swZ1eZmTYRDT1ziRp6KNcM=}"
+      - usernamePassword:
+          id: "id-mysql"
+          password: "{AQAAABAAAAAQI3cvLJEs8vif2xMoO6LAg25wt+RDVpWJGaZOcf/wCi8=}"
+          scope: GLOBAL
+          username: "curiosity"
+      - string:
+          description: "id-mysql-host"
+          id: "id-mysql-host"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAQajfgf3AMDBqhRFt5kU6IA+lxldt7wWKlqIlUNcFcpWU=}"
 jenkins:
   securityRealm:
     local:
@@ -10,6 +33,11 @@ jenkins:
       permissions:
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: "KUBERNETES_ENDPOINT"
+        value: "https://192.168.5.15:6443"
   remotingSecurity:
     enabled: true
 security:

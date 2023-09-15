@@ -2,8 +2,8 @@
 
 pipeline {
   environment {
-    registry = "fharris/curiosity"
-    registryCredential = 'id-docker-registry'
+    //registry = "fharris/curiosity"
+    //registryCredential = 'id-docker-registry'
     dockerImageBuild = ''
     dockerImageLatest = ''
     MYSQL_CREDENTIALS = credentials('id-mysql')

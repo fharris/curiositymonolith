@@ -2,9 +2,9 @@
 
 pipeline {
   environment {
-    registry = "fharris/curiosity"
+    //registry = "fharris/curiosity"
     registry2 = "172.18.0.6:5000/curiosity"
-    registryCredential = 'id-docker-registry'
+    //registryCredential = 'id-docker-registry'
     imageLatest = ''
     MYSQL_CREDENTIALS = credentials('id-mysql')
     MYSQL_HOST = credentials('id-mysql-host')
@@ -60,7 +60,8 @@ pipeline {
     stage('Pushing image to registry2 local') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          //docker.withRegistry( '', registryCredential ) {
+            docker.withRegistry( '' ) {
             imageLatest2.push()
           }
         }
