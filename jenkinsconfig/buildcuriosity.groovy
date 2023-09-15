@@ -40,13 +40,13 @@ pipeline {
      stage('Building image') {
       steps{
         script {
-          imageLatest = docker.build(registry ,  "--build-arg SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --build-arg SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --build-arg SPRING_DATASOURCE_HOST=$mysql_network_host --build-arg SPRING_DATASOURCE_PORT=$mysql_port --build-arg SPRING_DATASOURCE_DBNAME=$mysql_database_name ." )
+          //imageLatest = docker.build(registry ,  "--build-arg SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --build-arg SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --build-arg SPRING_DATASOURCE_HOST=$mysql_network_host --build-arg SPRING_DATASOURCE_PORT=$mysql_port --build-arg SPRING_DATASOURCE_DBNAME=$mysql_database_name ." )
           imageLatest2 = docker.build(registry2 ,  "--build-arg SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --build-arg SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --build-arg SPRING_DATASOURCE_HOST=$mysql_network_host --build-arg SPRING_DATASOURCE_PORT=$mysql_port --build-arg SPRING_DATASOURCE_DBNAME=$mysql_database_name ." )
           //imageLatest = docker.build(registry ,  "--build-arg SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --build-arg SPRING_DATASOURCE_PASSWORD='Welcome#1' --build-arg SPRING_DATASOURCE_HOST=$mysql_network_host --build-arg SPRING_DATASOURCE_PORT=$mysql_port --build-arg SPRING_DATASOURCE_DBNAME=$mysql_database_name ." )
         }
       }
     }
-    
+    /*
      stage('Pushing image to registry docker hub') {
       steps{
         script {
@@ -56,7 +56,7 @@ pipeline {
         }
       }
     }
-
+    */
     stage('Pushing image to registry2 local') {
       steps{
         script {
