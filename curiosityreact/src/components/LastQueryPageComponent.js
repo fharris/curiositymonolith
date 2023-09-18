@@ -9,15 +9,15 @@ class LastQueryPageComponent extends React.Component {
             <table class="center">
                 <thead>
                 <tr>
-                 
-                    <th>Original Query</th>
+                    <th>#</th>
                     <th>Query</th>
+                    <th>Article</th>
                 </tr>
                 </thead>
                 <tbody>
                  {this.props.queryPageList.map(a =>
                     <tr key={a.id}>
-         
+                        <td>{a.id}</td>
                         <td>{a.originalQuery}</td>
                         <td>{a.query}</td>
                     </tr>

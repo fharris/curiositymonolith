@@ -184,7 +184,7 @@ class ChallengeComponent extends React.Component {
 
                 <form onSubmit={this.handleSubmitGetPages}>
                     <label>
-                        Name:
+                        My name is:
                         <input type="text" maxLength="24"
                                name="user"
                                value={this.state.user}
@@ -192,9 +192,8 @@ class ChallengeComponent extends React.Component {
                     </label>
                     <br/>
                     <label>
-
-                        Query:
-                        <input type="text" maxLength="24"
+                        My query is:
+                        <input type="text" maxLength="23"
                                name="query"
                                value={this.state.query}
                                onChange={this.handleChange}/>

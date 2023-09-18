@@ -3,20 +3,6 @@
     margin-right: auto;
   }
 
-  table, th, td {
-    border: 1px solid;
-  }
-
-  input[type=text] {
-    background-color: white;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    border: none;
-border-color: transparent;
-  }
-
-
   .display-column {
     display: flex;
     flex-direction: column;
