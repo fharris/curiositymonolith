@@ -1,15 +1,20 @@
-FROM node:14
+FROM node:14 AS node_base_image 
+
+RUN echo "NODE Version:" && node --version
+RUN echo "NPM Version:" && npm --version
+ARG TEST1=`node --version`
+
+CMD ["echo", $TEST1]
 
 WORKDIR /curiosityreact
 
 COPY /curiosityreact .
 
+RUN rm package-lock.json
+
 RUN npm install
-
+ 
 RUN npm run build
-
-RUN ls -ltra
-
 
 FROM maven:3.8.4-jdk-11-slim as maven
 
@@ -19,10 +24,9 @@ ARG SPRING_DATASOURCE_HOST
 ARG SPRING_DATASOURCE_PORT
 ARG SPRING_DATASOURCE_DBNAME
 
-
-
 COPY ./pom.xml ./pom.xml
 COPY ./src ./src
+COPY --from=node_base_image /curiosityreact/build src/main/resources/static
 
 RUN mvn dependency:go-offline -B
 
