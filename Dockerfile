@@ -1,14 +1,27 @@
+FROM node:14
+
+WORKDIR /curiosityreact
+
+COPY /curiosityreact .
+
+RUN npm install
+
+RUN npm run build
+
+RUN ls -ltra
+
+
 FROM maven:3.8.4-jdk-11-slim as maven
 
-ARG SPRING_DATASOURCE_USERNAME
+ARG SPRING_DATASOURCE_USERNAME 
 ARG SPRING_DATASOURCE_PASSWORD
 ARG SPRING_DATASOURCE_HOST
 ARG SPRING_DATASOURCE_PORT
 ARG SPRING_DATASOURCE_DBNAME
 
 
-COPY ./pom.xml ./pom.xml
 
+COPY ./pom.xml ./pom.xml
 COPY ./src ./src
 
 RUN mvn dependency:go-offline -B
