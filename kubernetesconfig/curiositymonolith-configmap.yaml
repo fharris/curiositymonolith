@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: curiositymonolith-configmap
-  namespace: curiositymonolith
-data:
-  SPRING_DATASOURCE_HOST: "mysql-db-deployment.curiositymonolith.svc.cluster.local"
-  SPRING_DATASOURCE_PORT: "80"
-  SPRING_DATASOURCE_DBNAME: "curiositydb"
