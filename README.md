@@ -5,7 +5,7 @@ This is the code for the backend in the monolith version
 Fernando Harris
 ---
 
-**Manual deployment 
+** Manual deployment **
 
 1.	Get the code from GitHub
 If you haven’t done so, get the code from the repository with the below command:
