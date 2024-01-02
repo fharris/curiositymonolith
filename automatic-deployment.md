@@ -62,7 +62,7 @@ you should see the docker network cloudnative with 5 containers running, each sh
 
 1. **Configure local Git server**
 
-TheGogs container is running on localhost:10880.Copy past that hostname:port on your browser and start the configuration. The first time you run it, you will get a special screen for the database set up. Make sure than you Select SQLite3 and keep the Path as it is as illustrated in Figure gogs1.
+The Gogs container is running on localhost:10880. Copy past that hostname:port on your browser and start the configuration. The first time you run it, you will get a special screen for the database set-up. Make sure that you select **SQLite3** and keep the **Path** as it is as illustrated in Figure gogs1.
 
 <img width="1036" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/fa65bd6b-305e-450d-9d92-4a3627c9146e">
 
@@ -71,7 +71,7 @@ TheGogs container is running on localhost:10880.Copy past that hostname:port on 
 
 Figure gogs1
 
-Below, in the Application General Settings please change the default Branch from **master to main** : as illustrated in Figure gogs2:
+Below, in the Application General Settings please change the default Branch from **master** to **main** : as illustrated in Figure gogs2:
 
 <img width="942" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/9859ee68-2dfe-4e5d-ba2a-2287ea2c0c76">
 
@@ -89,11 +89,9 @@ Now on the optional settings, you will need to define an admin user called gogs-
 
 **Figure gogs3**
 
-After clicking the button, it is probable that your browser will revert to localhost:3000 and the connection is lost. Just retype localhost:10880. Before importing signing in and import the repository of our Wikipedia application from GitHub, we first needto configure Gogs to allow local calls.In a terminal run the following command to get into the gogs container and add a line to its configuration file app.ini:
+After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype localhost:10880. Before signing in and importing the repository of our Wikipedia application from GitHub, we first need to configure Gogs to allow local calls. In a terminal run the following command to get into the gogs container and add a line to its configuration file app.ini:
 
-docker exec -it gogs sh -c \
-
-"echo 'LOCAL\_NETWORK\_ALLOWLIST = \*' \>\> /data/gogs/conf/app.ini"
+docker exec -it gogs sh -c "echo 'LOCAL\_NETWORK\_ALLOWLIST = \*' \>\> /data/gogs/conf/app.ini"
 
 Restart the gogs container with
 
