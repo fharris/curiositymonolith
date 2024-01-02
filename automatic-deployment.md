@@ -73,11 +73,17 @@ Figure gogs1
 
 Below, in the Application General Settings please change the default Branch from **master to main** : as illustrated in Figure gogs2:
 
+<img width="942" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/9859ee68-2dfe-4e5d-ba2a-2287ea2c0c76">
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_1f7359bb53b17dcf.png)
 
 Figure gogs2
 
 Now on the optional settings, you will need to define an admin user called gogs-user. Take note of the password you are going to use. The email is optional. Click the blue button Install Gogs. Follow figure gogs3 for more details:
+
+<img width="959" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/33f8fcb5-91b6-4a28-ad09-fadd0e4d6b15">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_e1991ea04bc71612.png)
 
