@@ -56,7 +56,7 @@ Wait a couple of minutes and at the end of the processconfirm the environment is
 
 docker network inspect cloudnative | jq '.[].Containers'
 
-you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IPaddresses.
+you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
 
 ![](RackMultipart20231003-1-aq9tt0_html_d65480e48be4764a.png)
 
@@ -99,11 +99,17 @@ docker restart gogs
 
 and sign in with the gogs-user and the password you created before. Click the little plus "+" signal next to your avatar and select New Migration as per Figure gogs4:
 
+<img width="985" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/303652e6-1048-4a79-ac4d-8b9600d64f72">
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_647ae7bc2e06a780.png)
 
 Figure gogs4
 
 Follow Figure gogs5 and replace the Clone Address with the GitHub address of the original repository which is [https://github.com/fharris/curiositymonolith](https://github.com/fharris/curiositymonolith) . The owner will be **gogs-user** and the name should be the **curiositymonolith** as well.
+
+<img width="821" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/79d5a50f-48b6-434f-ad4b-3231d17ecdac">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_6d8b01dc2bcefa6c.png)
 
@@ -113,11 +119,17 @@ After clicking the green button to start the migration, if all goes well, you sh
 
 We will now configure Webhooks for the Gogs-Jenkins communication. From your codebase click Settings (the little tools icon on the top right of the screen) or navigate directly to [http://localhost:10880/gogs-user/curiositymonolith/settings](http://localhost:10880/gogs-user/curiositymonolith/settings) . Click Webhooks, and Add a New Webooks of type Gogs as per figure gogs6:
 
+<img width="1057" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/280c7bbc-51d1-4a5c-8d0a-1d6b5f178ab6">
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_e1813c6e1ef799f5.png)
 
 Figure gogs6
 
 Replace the Payload URL with [http://jenkins:8080/gogs-webhook/?job=buildcuriosity](http://jenkins:8080/gogs-webhook/?job=buildcuriosity) which is where Jenkins CI/CD will be waiting for Gogs notifications. Make sure the Content-Type is application/json, and that there is no Secret configured. Before clicking the green button to create the Webhook ensure the Just the Push event option is selected and the Active box is enabled. Figure gogs7 shows how to do it:
+
+<img width="997" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/07981dab-68ac-4420-971b-b5ecfe4eb257">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_b3be40f1268aec96.png)
 
