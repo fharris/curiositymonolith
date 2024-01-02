@@ -4,6 +4,12 @@
 
 **Access to a Kubernetes cluster (k3s, minikube…)**
 
+ •Access to a Kubernetes cluster
+•	kubectl installed and pointing to the cluster
+•	git
+•	jq installed 
+
+
 **Get the code from GitHub**
 
 If you haven't done so, get the code from the repository:
