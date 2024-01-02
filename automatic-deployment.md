@@ -64,6 +64,9 @@ you should see the docker network cloudnative with 5 containers running, each sh
 
 TheGogs container is running on localhost:10880.Copy past that hostname:port on your browser and start the configuration. The first time you run it, you will get a special screen for the database set up. Make sure than you Select SQLite3 and keep the Path as it is as illustrated in Figure gogs1.
 
+<img width="1036" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/fa65bd6b-305e-450d-9d92-4a3627c9146e">
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_d635a2ca952c171e.png)
 
 Figure gogs1
