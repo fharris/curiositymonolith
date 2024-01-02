@@ -20,11 +20,19 @@ If we already tried this exercise before, or have installed the application manu
 
 1. **Take note of the kube proxy API endpoint.**
 
+In a tab run the command:
+
 kubectl proxy &
+
+Open another tab and run the following command:
 
 curl localhost:8001/api
 
-And you should get the Server address. (We did this back in chapter 6 if you have any doubts)
+And you should get the Server address. 
+
+<img width="542" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/ac354600-3e6d-492a-a331-bc75460c5f14">
+
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_c73a4f7b3393c0e7.png)
 
