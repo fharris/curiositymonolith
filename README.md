@@ -61,5 +61,5 @@ You should be able to see the curiosity monolith and respective database pods ru
 kubectl -n curiositymonolith port-forward svc/curiositymonolith-service-lb 9000:80
 
 And if you open your browser at http://localhost:9000 , voilà:
-![image](https://github.com/fharris/curiositymonolith/assets/17484224/c9bd0364-4d4b-44c9-be4a-e890a15b67f8)
+
 
