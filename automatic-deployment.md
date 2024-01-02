@@ -32,29 +32,7 @@ And you should get the Server address.
 
 <img width="339" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/de567643-96be-4683-901f-1fda0abf15af">
 
-
-
-![](RackMultipart20231003-1-aq9tt0_html_c73a4f7b3393c0e7.png)
-
-In each of the Groovy files update this value in the Kubernetes proxy:
-
-pipeline {
-
-environment {
-
-registry ="fharris/curiosity"
-
-registryCredential ='id-docker-registry'
-
-dockerImageBuild =''
-
-dockerImageLatest =''
-
-MYSQL\_CREDENTIALS = credentials('id-mysql')
-
-kubernetes\_proxy ='https://192.168.5.15:6443'
-
-}
+You will need to update this value later in Jenkins env vars.
 
 1. **Create a namespace for the application and Jenkins user credentials**
 
