@@ -30,7 +30,7 @@ curl localhost:8001/api
 
 And you should get the Server address. 
 
-<img width="542" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/ac354600-3e6d-492a-a331-bc75460c5f14">
+<img width="339" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/de567643-96be-4683-901f-1fda0abf15af">
 
 
 
