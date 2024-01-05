@@ -247,8 +247,12 @@ Return to the Dashboard and run the **configurecuriosity** job to install the ap
 
 ![](RackMultipart20231003-1-aq9tt0_html_623f9f7e813e664e.png)
 
+
+
+Once the job runs successfully if you run the following command, you should see the application running in your browser at **HTTP://localhost:9000** :
+
+```
 kubectl -n curiositymonolith port-forward svc/curiositymonolith-service-lb 9000:80
+```
 
-![](RackMultipart20231003-1-aq9tt0_html_e5bf9d8562803b43.png)
-
-![](RackMultipart20231003-1-aq9tt0_html_492032c8afcd81a1.png)
+<img width="1440" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/809a4659-26b4-4e1a-83df-1bd14e5b4760">
