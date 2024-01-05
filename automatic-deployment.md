@@ -5,9 +5,13 @@
 **Access to a Kubernetes cluster (k3s, minikube…)**
 
 Access to a Kubernetes cluster
+
 kubectl installed and pointing to the cluster
+
 git
+
 jq installed 
+
 MySQL client installed
 
 
