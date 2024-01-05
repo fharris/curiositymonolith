@@ -1,8 +1,6 @@
 **Requirements**
 
-**16 Gb ram**
-
-**Access to a Kubernetes cluster (k3s, minikube…)**
+16 Gb ram
 
 Access to a Kubernetes cluster
 
@@ -26,20 +24,24 @@ Change to the curiositymonolith folder and run the following commands:
 
 If we already tried this exercise before, or have installed the application manually, please run the following 2 scripts for housekeeping:
 
+```
 ./housekeeping-k8s.sh
+```
 
+```
 ./housekeeping-docker.sh
-
+```
 1. **Take note of the kube proxy API endpoint.**
 
 In a tab run the command:
 
+``
 kubectl proxy &
-
+``
 Open another tab and run the following command:
-
+``
 curl localhost:8001/api
-
+``
 And you should get the Server address. 
 
 <img width="339" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/de567643-96be-4683-901f-1fda0abf15af">
