@@ -137,11 +137,16 @@ Figure gogs7
 
 If all goes well, you should get something as Figure gogs8. Click the link for the webhook (should be [http://jenkins:8080/gogs-webhook/?job=buildcuriosity](http://jenkins:8080/gogs-webhook/?job=buildcuriosity) ).
 
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_13b8dd7759df0b57.png)
 
 Figure gogs8
 
 Now, as illustrated in Figure gogs9, inside the webhook configuration you will see a little Test Delivery button on the right bottom of the screen. If you click it you should get a successful test and an event as just been delivered to your local Jenkins:
+
+<img width="1090" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/fb89e807-40c2-47da-b1a9-f53d3839553a">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_6f9154031c81211.png)
 
@@ -149,7 +154,9 @@ Figure gogs9
 
 1. **Configuring Jenkins**
 
-This Jenkins container has all the CI/CD pipelines already configured for you to use. All is managed as code from the code base repository itself (the buildcuriosity.groovy and deploycuriosity.groovy). Navigate with your browser to localhost:8080 and sign in with the user we prepared for you which is **admin** with password **123**. Skip all the steps related to plugins installation or related to the creation of new users.
+This Jenkins container has all the CI/CD pipelines already configured for you to use. All is managed as code from the code base repository itself (the buildcuriosity.groovy and deploycuriosity.groovy). Navigate with your browser to localhost:8080 and sign in with the user we prepared for you which is **admin** with password **123**. Skip all the steps related to plugin installation or related to the creation of new users.
+
+<img width="1281" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/9aea823c-2a7a-422a-ad10-70c7df68aab8">
 
 ![](RackMultipart20231003-1-aq9tt0_html_647a325c2ba2b80e.png)
 
@@ -157,15 +164,18 @@ Close this and ignore
 
 ![](RackMultipart20231003-1-aq9tt0_html_7ccf605345a563ea.png)
 
-Start using jenkins
+Start using Jenkins
 
-Once logged in you should see Jenkins with 3 jobs configured. The job curiosity should have at least a failed build which was triggered when you tested the Gogs Webhook or be running. The first run takes a few minutes.
+Once logged in you should see Jenkins with 3 jobs configured. The job curiosity should have at least a failed build which was triggered when you tested the Gogs Webhook. The first run takes a few minutes.
+
+<img width="1428" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/2e32f272-bc5e-430e-8dbc-35c033ebf370">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_f3af156b977ab465.png)
 
 Figure jenk1
 
-We will need to update the Kubernetes token for the Jenkins Service Account and the local MySQL password to the **curiosity** user, which is **Welcome#1**.
+We must update the Kubernetes token for the Jenkins Service Account and the local MySQL password to the **curiosity** user, which is **Welcome#1**.
 
 ![](RackMultipart20231003-1-aq9tt0_html_4200aab3ef8edfd6.png)
 
