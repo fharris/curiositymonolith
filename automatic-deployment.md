@@ -164,9 +164,14 @@ This Jenkins container has all the CI/CD pipelines already configured for you to
 
 Close this and ignore
 
+<img width="1013" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/bf148835-c175-4c7c-b6b6-2b96fa0d18c5">
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_7ccf605345a563ea.png)
 
 Start using Jenkins
+<img width="1001" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/82f9ba77-4d72-4d56-a7c7-8b44cb6c196f">
+
 
 Once logged in you should see Jenkins with 3 jobs configured. The job curiosity should have at least a failed build which was triggered when you tested the Gogs Webhook. The first run takes a few minutes.
 
@@ -181,13 +186,23 @@ We must update the Kubernetes token for the Jenkins Service Account and the loca
 
 ![](RackMultipart20231003-1-aq9tt0_html_4200aab3ef8edfd6.png)
 
-Click Credentials:
+In Manage Jenkins,  Click Credentials:
+<img width="1078" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/5d6fb621-7165-499b-ae71-88522f81ef82">
 
-![](RackMultipart20231003-1-aq9tt0_html_9cb0e459bae2ea58.png)
 
 **Update Kubernetes token:**
 
+![](RackMultipart20231003-1-aq9tt0_html_9cb0e459bae2ea58.png)
+
+Select the jenkins-token-kubernetes to edit and replace with the token you generated before.
+
+<img width="1078" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/a8f481f5-3cdd-41f7-8c67-0dbbde0545af">
+
+If you don't remember the token run the following command to get it again:
+
+```
 kubectl get secrets jenkins-task-sa-secret -o json | jq -Mr '.data["token"]' | base64 -D
+```
 
 ![](RackMultipart20231003-1-aq9tt0_html_4b65a4753b9b0fad.png)
 
