@@ -232,6 +232,10 @@ Keep the username curiosity and replace the password with Welcome#1    :
 
 Click Save.
 
+In Manage Jenkins, click System:
+
+![Alt text](image.png)
+
 Back to the Dashboard schedule a build for the job **buildcuriosity** as we need to generate an image to pull to the local container repos:
 <img width="1427" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/574323a5-1627-4306-8c1b-f00c80cf02f8">
 
