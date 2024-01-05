@@ -204,6 +204,9 @@ If you don't remember the token run the following command to get it again:
 ```
 kubectl get secrets jenkins-task-sa-secret -o json | jq -Mr '.data["token"]' | base64 -D
 ```
+and after clicking Update, replace the secret with it:
+<img width="1346" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/8e5febeb-2bad-4e0d-bb14-0cfdc52e55b9">
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_4b65a4753b9b0fad.png)
 
