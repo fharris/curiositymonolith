@@ -196,7 +196,8 @@ In Manage Jenkins,  Click Credentials:
 
 Select the jenkins-token-kubernetes to edit and replace with the token you generated before.
 
-<img width="1078" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/a8f481f5-3cdd-41f7-8c67-0dbbde0545af">
+<img width="1387" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/c5341eae-8ef5-41ec-b8ae-6fb1fa256f90">
+
 
 If you don't remember the token run the following command to get it again:
 
