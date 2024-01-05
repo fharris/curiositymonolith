@@ -212,19 +212,36 @@ and after clicking Update, replace the secret with it:
 
 ![](RackMultipart20231003-1-aq9tt0_html_e47bcee192f08e62.png)
 
-and replace here the token with copy-past.
+Click Save.
 
 **Update Local MySQL password:**
 
-User: curiosity
+Repeat the exercise for the MySQL database.
 
-Password: Welcome#1
+Select the id-mysql credential to update:
+<img width="1382" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/a6d0d104-52b5-4db4-b0b3-aa96c629d9af">
 
-Run the build first…we need an image in the local container repos:
+Keep the username curiosity and replace the password with Welcome#1    :
+<img width="1371" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/2ee875ae-b34e-4730-98cc-467acc61119a">
+
+Click Save.
+
+Back to the Dashboard schedule a build for the job **buildcuriosity** as we need to generate an image to pull to the local container repos:
+<img width="1427" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/574323a5-1627-4306-8c1b-f00c80cf02f8">
+
+When the job is finished, if the Building Image step is green 
+
+<img width="1434" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/8bb507ff-469b-413f-b7c5-e352d56e9832">
+
+and its logs show that the image was pushed to the local repository, then we should be OK to continue:
+
+<img width="1431" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/ba273334-8a67-48ec-b366-b5df4e2f60a4">
+
+
 
 ![](RackMultipart20231003-1-aq9tt0_html_be3cc375e5563d84.png)
 
-Run the configurecuriosity job to install everything:
+Return to the Dashboard and run the **configurecuriosity** job to install the application and database in Kubernetes:
 
 ![](RackMultipart20231003-1-aq9tt0_html_9099957d1166cc4d.png)
 
