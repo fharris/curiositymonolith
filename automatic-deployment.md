@@ -8,6 +8,8 @@
 •	kubectl installed and pointing to the cluster
 •	git
 •	jq installed 
+•	MySQL client installed
+
 
 
 **Get the code from GitHub**
