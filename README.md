@@ -11,5 +11,5 @@ Fernando Harris
 
 **Automated deployment**
 
-[Manual deployment](./automatic-deployment.md)
+[Automated deployment](./automatic-deployment.md)
 
