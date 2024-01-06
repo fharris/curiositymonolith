@@ -7,6 +7,8 @@ Fernando Harris
 
 **Manual deployment**
 
+[Manual deployment](./manual-deployment.md)
+
 1.	Get the code from GitHub
 If you haven’t done so, get the code from the repository with the below command:
 
