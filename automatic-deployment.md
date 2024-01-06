@@ -232,9 +232,17 @@ Keep the username curiosity and replace the password with Welcome#1    :
 
 Click Save.
 
+**Update Kubernetes API Proxy endpoint**
+
 In Manage Jenkins, click System:
 
 ![Alt text](image.png)
+
+Search the environment variables and update:
+<img width="1390" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/c6f839b4-822c-4e25-8117-29cd8af695d0">
+
+Click Save.
+
 
 Back to the Dashboard schedule a build for the job **buildcuriosity** as we need to generate an image to pull to the local container repos:
 <img width="1427" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/574323a5-1627-4306-8c1b-f00c80cf02f8">
