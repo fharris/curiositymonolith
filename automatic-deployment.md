@@ -1,18 +1,12 @@
 **Requirements**
 
-*16 Gb ram*
-
-Access to a Kubernetes cluster
-
-kubectl installed and pointing to the cluster
-
-git 
-
-jq  
-
-MySQL client 
-
-docker
+*16 GB RAM*
+*Access to a Kubernetes cluster*
+*kubectl* 
+*git* 
+*jq*  
+*MySQL client* 
+*docker*
 
 
 
