@@ -6,11 +6,13 @@ Access to a Kubernetes cluster
 
 kubectl installed and pointing to the cluster
 
-git
+git 
 
-jq installed 
+jq  
 
-MySQL client installed
+MySQL client 
+
+docker
 
 
 
