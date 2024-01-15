@@ -42,6 +42,8 @@ If we already tried this exercise before, or have installed the application manu
 ```
 1. **Take note of the kube proxy API endpoint.**
 
+If you are running this exercise with a Kubernetes cluster whose API is a public IP or a private IP behind a public jump machine, then you just need to take note of that IP. If you are running this with a local Kubernetes cluster then you can just follow the next steps to get the IP of your local Kubernetes cluster.
+
 In a tab run the command:
 
 ``
