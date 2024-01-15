@@ -1,6 +1,6 @@
 **Requirements**
 
-16 Gb ram
+*16 Gb ram*
 
 Access to a Kubernetes cluster
 
