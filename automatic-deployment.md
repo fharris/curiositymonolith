@@ -1,11 +1,17 @@
 **Requirements**
 
 *16 GB RAM*
+
 *Access to a Kubernetes cluster*
+
 *kubectl* 
+
 *git* 
-*jq*  
-*MySQL client* 
+
+*jq*
+
+*MySQL client*
+
 *docker*
 
 
