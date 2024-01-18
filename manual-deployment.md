@@ -6,11 +6,15 @@ git clone https://github.com/fharris/curiositymonolith
 Create the curiositymonolith namespace
 You can start by running the housekeeping-k8s script first to clean everything if this is not the first time you are doing the set-up. Change to the curiositymonolith folder and run the following commands:
 
+```
 ./housekeeping-k8s.sh
+```
 
 If you just want to see the app running and leave the manual steps to study later just run the following script:
 
+```
 ./deploy-curiosity.sh
+```
 
 If all goes well, you may jump to step 5 and ignore the rest of the steps.
 
