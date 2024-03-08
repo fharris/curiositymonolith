@@ -108,6 +108,7 @@ After clicking the button, your browser will probably revert to localhost:3000 a
 ```
 docker exec -it gogs sh -c "echo 'LOCAL_NETWORK_ALLOWLIST = *' > /data/gogs/conf/app.ini"
 ```
+ps: if command above fails try to get inside the container and replace it directly to troubleshoot. Fernando
 
 Restart the gogs container with
 ```
