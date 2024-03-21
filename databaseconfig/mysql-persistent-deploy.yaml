@@ -17,7 +17,7 @@ spec:
         persistentVolumeClaim:
           claimName: mysql-pv-claim
       containers:
-      - image: mysql:5.7
+      - image: biarms/mysql:5.7
         name: mysql-container
         env:
         - name: MYSQL_ROOT_PASSWORD
