@@ -17,6 +17,7 @@ spec:
         persistentVolumeClaim:
           claimName: mysql-pv-claim
       containers:
+      # biarms image to support ARM. Change accordingly
       - image: biarms/mysql:5.7
         name: mysql-container
         env:
