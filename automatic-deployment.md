@@ -27,7 +27,7 @@ In the previous step, you have manually installed the application and test it wi
 
 If you haven't done so, get the code from the repository:
 ```
-git clone [https://github.com/fharris/curiositymonolith](https://github.com/fharris/curiositymonolith)
+git clone https://github.com/fharris/curiositymonolith
 ```
 Change to the curiositymonolith folder and run the following commands:
 
