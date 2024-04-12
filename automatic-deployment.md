@@ -253,11 +253,18 @@ and its logs show that the image was pushed to the local repository, then we sho
 
 Return to the Dashboard and run the **configurecuriosity** job to install the application and database in Kubernetes:
 
+
+![image](https://github.com/fharris/curiositymonolith/assets/17484224/065f90fb-84d7-4ccf-936d-d7cb2582be9b)
+
+
 ![](RackMultipart20231003-1-aq9tt0_html_9099957d1166cc4d.png)
 
 ![](RackMultipart20231003-1-aq9tt0_html_623f9f7e813e664e.png)
 
 if the jobs fails, give it a new try because there is a command that takes a bit longer to run the first time it runs...
+
+![image](https://github.com/fharris/curiositymonolith/assets/17484224/1656451e-4252-4277-be3b-0f0aced0e897)
+
 
 Once the job runs successfully if you run the following command, you should see the application running in your browser at **HTTP://localhost:9000** :
 
