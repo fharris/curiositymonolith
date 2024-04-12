@@ -106,7 +106,7 @@ Now on the optional settings, you will need to define an admin user called gogs-
 After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype localhost:10880. Before signing in and importing the repository of our Wikipedia application from GitHub, we first need to configure Gogs to allow local calls. In a terminal run the following command to get into the gogs container and add a line to its configuration file app.ini:
 
 ```
-docker exec -it gogs sh -c "echo 'LOCAL_NETWORK_ALLOWLIST = *' > /data/gogs/conf/app.ini"
+docker exec -it gogs sh -c "echo 'LOCAL_NETWORK_ALLOWLIST = *' >> /data/gogs/conf/app.ini"
 ```
 ps: if command above fails try to get inside the container and replace it directly to troubleshoot. Fernando
 
@@ -226,11 +226,11 @@ Click Save.
 
 **Update Kubernetes API Proxy endpoint**
 
-In Manage Jenkins, click System:
+In Manage Jenkins, click System or go directly to http://localhost:8080/manage/configure :
 
 ![Alt text](image.png)
 
-Search the environment variables and update:
+Search the environment variables and update with the server address of your kubernetes cluster:
 <img width="1390" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/c6f839b4-822c-4e25-8117-29cd8af695d0">
 
 Click Save.
@@ -257,7 +257,7 @@ Return to the Dashboard and run the **configurecuriosity** job to install the ap
 
 ![](RackMultipart20231003-1-aq9tt0_html_623f9f7e813e664e.png)
 
-
+if the jobs fails, give it a new try because there is a command that takes a bit longer to run the first time it runs...
 
 Once the job runs successfully if you run the following command, you should see the application running in your browser at **HTTP://localhost:9000** :
 
@@ -266,3 +266,11 @@ kubectl -n curiositymonolith port-forward svc/curiositymonolith-service-lb 9000:
 ```
 
 <img width="1440" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/809a4659-26b4-4e1a-83df-1bd14e5b4760">
+
+
+And that's it!!
+
+The application is running and the CICD with Jenkins its ready! 
+Try to clone the code and make some changes to see the CI/CD being triggered now!
+
+Have fun!
