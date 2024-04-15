@@ -92,7 +92,7 @@ Below, in the Application General Settings please change the default Branch from
 <img width="942" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/9859ee68-2dfe-4e5d-ba2a-2287ea2c0c76">
 
 
-Now on the optional settings, you will need to define an admin user called gogs-user. Take note of the password you are going to use. The email is optional. Click the blue button Install Gogs. Follow figure gogs3 for more details:
+Now on the optional settings, you will need to define an admin user called gogs-user. Take note of the password you are going to use. The email is optional. Click the blue button **Install Gogs** and follow figure gogs3 for more details:
 
 <img width="959" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/33f8fcb5-91b6-4a28-ad09-fadd0e4d6b15">
 
@@ -101,7 +101,19 @@ Now on the optional settings, you will need to define an admin user called gogs-
 
 **Figure gogs3**
 
-After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype localhost:10880 and sign in with the user **gogs-user** and the password you created before. Click the little plus "+" signal next to your avatar and select New Migration:
+After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype HTTP://localhost:10880 and sign in with the user **gogs-user** and the password you created before. Now is the moment to return to the terminal and resume the script by pressing **ENTER**. Let the script run to the end and confirm that all containers are running. You need **jq** installed to run the following command:
+
+**[optional]**
+```
+docker network inspect cloudnative | jq '.[].Containers'
+```
+
+you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
+
+
+Get back to the Gogs Console in the browser at localhost:10880 [http://localhost:10880](http://localhost:10880).
+
+Click the little plus "+" signal next to your avatar and select New Migration:
 
 <img width="985" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/303652e6-1048-4a79-ac4d-8b9600d64f72">
 
@@ -142,14 +154,6 @@ Now, as illustrated in Figure gogs9, inside the webhook configuration you will s
 Figure gogs9
 
 
-
- 
-Wait a couple of minutes and at the end of the process confirm the environment is running (you need jq installed to run the following command):
-```
-docker network inspect cloudnative | jq '.[].Containers'
-```
-
-you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
 
 
 4. **Configuring Jenkins**
