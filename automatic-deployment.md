@@ -73,16 +73,9 @@ Run the script:
 ```
 ./CICD/containers-run-config.sh
 ```
- 
-Wait a couple of minutes and at the end of the process confirm the environment is running (you need jq installed to run the following command):
-```
-docker network inspect cloudnative | jq '.[].Containers'
-```
+At some point, the script will stop and wait for the Gogs server configuration. Follow the next instructions and return to the script in the terminal when you finish configuring Gogs.
 
-you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
-
-
-1. **Configure local Git server**
+3. **Configure local Git server**
 
 The Gogs container is running on *http://localhost:10880*. Copy past that hostname:port on your browser and start the configuration. The first time you run it, you will get a special screen for the database set-up. Make sure that you select **SQLite3** and keep the **Path** as it is as illustrated in the next figure.
 
@@ -154,9 +147,20 @@ Now, as illustrated in Figure gogs9, inside the webhook configuration you will s
 
 Figure gogs9
 
-1. **Configuring Jenkins**
 
-This Jenkins container has all the CI/CD pipelines already configured for you to use. All is managed as code from the code base repository itself (the buildcuriosity.groovy and deploycuriosity.groovy). Navigate with your browser to localhost:8080 and sign in with the user we prepared for you which is **admin** with password **123**. Skip all the steps related to plugin installation or related to the creation of new users.
+
+ 
+Wait a couple of minutes and at the end of the process confirm the environment is running (you need jq installed to run the following command):
+```
+docker network inspect cloudnative | jq '.[].Containers'
+```
+
+you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
+
+
+4. **Configuring Jenkins**
+
+This Jenkins container has all the CI/CD pipelines already configured for you to use. All is managed as code from the code base repository  (the buildcuriosity.groovy and deploycuriosity.groovy). Navigate with your browser to localhost:8080 and sign in with the user we prepared for you which is **admin** with password **123**. Skip all the steps related to plugin installation or related to the creation of new users.
 
 <img width="1281" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/9aea823c-2a7a-422a-ad10-70c7df68aab8">
 
