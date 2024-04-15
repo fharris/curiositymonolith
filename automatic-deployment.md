@@ -73,7 +73,12 @@ Run the script:
 ```
 ./CICD/containers-run-config.sh
 ```
-At some point, the script will stop and wait for the Gogs server configuration. Follow the next instructions and return to the script in the terminal when you finish configuring Gogs.
+At some point, you will see the screen below and the script will stop and wait for the Gogs server configuration. 
+
+![image](https://github.com/fharris/curiositymonolith/assets/17484224/493c5a59-1abb-4f03-b8e7-288e94cded53)
+
+
+Follow the next instructions to configure Gogs and when finished, return to the script in the terminal, and press Enter to resume the configuration of the other containers:
 
 3. **Configure local Git server**
 
