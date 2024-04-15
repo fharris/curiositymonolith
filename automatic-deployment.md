@@ -101,14 +101,23 @@ Now on the optional settings, you will need to define an admin user called gogs-
 
 **Figure gogs3**
 
-After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype HTTP://localhost:10880 and sign in with the user **gogs-user** and the password you created before. Now is the moment to return to the terminal and resume the script by pressing **ENTER**. Let the script run to the end and confirm that all containers are running. You need **jq** installed to run the following command:
+After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype HTTP://localhost:10880 and sign in with the user **gogs-user** and the password you created before. Now is the moment to return to the terminal and resume the script by pressing **ENTER**. 
+
+
+![image](https://github.com/fharris/curiositymonolith/assets/17484224/bcc3d55e-70e6-447b-8f67-8cc137510fe7)
+
+
+Let the script run to the end and confirm that all containers are running. You need **jq** installed to run the following command:
 
 **[optional]**
 ```
 docker network inspect cloudnative | jq '.[].Containers'
 ```
 
-you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses.
+you should see the docker network cloudnative with 5 containers running, each showing their respective hostnames and local IP addresses:
+
+![image](https://github.com/fharris/curiositymonolith/assets/17484224/166d4a97-b70a-439b-9853-739a49a21186)
+
 
 
 Get back to the Gogs Console in the browser at localhost:10880 [http://localhost:10880](http://localhost:10880).
