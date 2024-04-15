@@ -7,7 +7,7 @@ In the previous step, you have manually installed the application and test it wi
 
 **Requirements**
 
-*16 GB RAM*
+*16 GB RAM* (The Jenkins container in particular needs a bit more resources then the other. So, make sure that you have that available if you start noticing Jenkins slower than it should ;))
 
 *Access to a Kubernetes cluster*
 
