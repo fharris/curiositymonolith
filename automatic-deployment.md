@@ -101,7 +101,7 @@ Now on the optional settings, you will need to define an admin user called gogs-
 
 **Figure gogs3**
 
-After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype HTTP://localhost:10880 and sign in with the user **gogs-user** and the password you created before. Now is the moment to return to the terminal and resume the script by pressing **ENTER**. 
+Now is the moment to return to the terminal and resume the script by pressing **ENTER**. 
 
 
 ![image](https://github.com/fharris/curiositymonolith/assets/17484224/bcc3d55e-70e6-447b-8f67-8cc137510fe7)
@@ -120,7 +120,7 @@ you should see the docker network cloudnative with 5 containers running, each sh
 
 
 
-Get back to the Gogs Console in the browser at localhost:10880 [http://localhost:10880](http://localhost:10880).
+Get back to the Gogs Console in the browser. Just retype  [http://localhost:10880](http://localhost:10880) and sign in with the user **gogs-user** and the password you created before. 
 
 Click the little plus "+" signal next to your avatar and select New Migration:
 
