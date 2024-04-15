@@ -101,18 +101,7 @@ Now on the optional settings, you will need to define an admin user called gogs-
 
 **Figure gogs3**
 
-After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype localhost:10880. Before signing in and importing the repository of our Wikipedia application from GitHub, we first need to configure Gogs to allow local calls. In a terminal run the following command to get into the gogs container and add a line to its configuration file app.ini:
-
-```
-docker exec -it gogs sh -c "echo 'LOCAL_NETWORK_ALLOWLIST = *' >> /data/gogs/conf/app.ini"
-```
-ps: if command above fails try to get inside the container and replace it directly to troubleshoot. Fernando
-
-Restart the gogs container with
-```
-docker restart gogs
-```
-and sign in with the gogs-user and the password you created before. Click the little plus "+" signal next to your avatar and select New Migration:
+After clicking the button, your browser will probably revert to localhost:3000 and the connection will be lost. Just retype localhost:10880 and sign in with the user **gogs-user** and the password you created before. Click the little plus "+" signal next to your avatar and select New Migration:
 
 <img width="985" alt="image" src="https://github.com/fharris/curiositymonolith/assets/17484224/303652e6-1048-4a79-ac4d-8b9600d64f72">
 
