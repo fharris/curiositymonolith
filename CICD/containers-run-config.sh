@@ -68,6 +68,7 @@ echo "|                                                                         
 echo "+---------------------------------------------------------------------------+"
 read -p ""
 
+echo "Preparing  Gogs to allow local calls:"
 docker exec -it gogs sh -c \ "echo 'LOCAL_NETWORK_ALLOWLIST = *' >> /data/gogs/conf/app.ini; chmod 777 /data/gogs/conf/app.ini; "
 docker exec -it gogs sh -c \ "cat /data/gogs/conf/app.ini;"
 docker restart gogs
