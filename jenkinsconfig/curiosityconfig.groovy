@@ -41,7 +41,7 @@ pipeline {
         withKubeConfig( credentialsId: 'jenkins-token-kubernetes', serverUrl: kubernetes_proxy ) {
 	          sh "kubectl apply -f appconfig/curiositymonolith-namespace.yaml"
             sh "kubectl apply -f ./databaseconfig/."
-            sh "sleep 15"
+            sh "sleep 30"
             sh "kubectl -n curiositymonolith exec -it `kubectl -n curiositymonolith get --no-headers=true pods -l app=mysql-db -o custom-columns=:metadata.name` -- mysql -h 127.0.0.1 -u root -pmySQLpword#2023 < ./databaseconfig/create-curiositydb-resources.sql"
             sh 'kubectl -n curiositymonolith create secret generic curiositymonolith-mysql-db-secret --from-literal=SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --from-literal=SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --dry-run=client -o yaml > curiositymonolith-mysql-db-secret.yaml'
             sh "kubectl apply -f curiositymonolith-mysql-db-secret.yaml"

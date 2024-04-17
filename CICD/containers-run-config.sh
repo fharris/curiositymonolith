@@ -27,7 +27,9 @@ echo "| Starting Containers                |"
 echo "+------------------------------------+"
 
 
-echo Starting Jenkins Container
+echo Starting Jenkins Container...
+echo "If you notice Jenkins is running too slow, try to increase the memory allocated to the container in the command below,"
+echo "or the memory allocated to the Box where your Docker is running"
 docker run --name jenkins --restart on-failure --detach  -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Xmx2048m -Djava.awt.headless=true" --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=123 --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-docker-certs:/certs/client:ro --volume jenkins-data:/var/jenkins_home --network cloudnative --ip 172.18.0.5 fharris/mynewjenkins:test
 
 
@@ -63,12 +65,12 @@ echo Configuring Gogs...
 echo "+---------------------------------------------------------------------------+"
 echo "|    **ATENTION**                                                           |"
 echo "| Open your browser in localhost:10880 and configure Gogs before continuing.|"
+echo "| Follow the steps explained in Github and press the blue button to install|"
 echo "| When you're done return to this script and press *ENTER* to continue      |"
 echo "|                                                                           |"
 echo "+---------------------------------------------------------------------------+"
 read -p ""
 
-echo "Preparing  Gogs to allow local calls:"
 docker exec -it gogs sh -c \ "echo 'LOCAL_NETWORK_ALLOWLIST = *' >> /data/gogs/conf/app.ini; chmod 777 /data/gogs/conf/app.ini; "
 docker exec -it gogs sh -c \ "cat /data/gogs/conf/app.ini;"
 docker restart gogs
