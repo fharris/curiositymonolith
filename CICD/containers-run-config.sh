@@ -59,11 +59,11 @@ echo "|                                     |"
 echo "+-------------------------------------+"
 
 echo Configuring Gogs...
-# maybe having app.ini with all ready!!
-#or implementing a wait to press button and ask user to open browser and configure before continuing
+# maybe having app.ini with everythinh ready!!
+#or implementing a wait-to-press button and ask the user to open the browser and configure it before continuing
 
 echo "+---------------------------------------------------------------------------+"
-echo "|    **ATENTION**                                                           |"
+echo "|    **ATTENTION**                                                           |"
 echo "| Open your browser in localhost:10880 and configure Gogs before continuing.|"
 echo "| Follow the steps explained in Github and press the blue button to install|"
 echo "| When you're done return to this script and press *ENTER* to continue      |"
