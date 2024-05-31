@@ -24,6 +24,7 @@ In the previous step, you manually installed the application and tested it with 
 
 
 **Get the code from GitHub**
+---
 
 If you haven't done so, get the code from the repository:
 ```
@@ -40,6 +41,7 @@ If we already tried this exercise before, or have installed the application manu
 ```
 ./housekeeping-docker.sh
 ```
+
 1. **Take note of the kube proxy API endpoint.**
 
 If you are running this exercise with a Kubernetes cluster whose API is a public IP or a private IP behind a public jump machine, then you just need to take note of that IP. If you are running this with a local Kubernetes cluster then you can just follow the next steps to get the IP of your local Kubernetes cluster.
@@ -59,13 +61,13 @@ And you should get the Server address.
 
 You will need to update this value later in Jenkins env vars.
 
-1. **Create a namespace for the application and Jenkins user credentials**
+2. **Create a namespace for the application and Jenkins user credentials**
 
 ```
 ./jenkinsconfiguration-k8.sh
 ```
 
-2. **Create local network and containers**
+3. **Create local network and containers**
 
 We will create a docker network (we could do this with docker composer as well, but for now let's keep it like that) and provision 5 containers that will help us recreate a simplified cloud native ecosystem. A first container with Docker Dind which allows us to build and run containers from within containers. A second container with Jenkins where the CI/CD pipelines to build and deploy the application will be configured. A third container with Gogs, a simple git Server where our code will reside and be synchronized with the Jenkins pipelines. A fourth container with a local mysql database, which we will use to help us on the builds. A fifth container with a local docker registry where the lifecycle of our application image will be managed and Kubernetes pull it to launch. Remember that this exercise is pedagogical and has an educational goal. It's important if you want to learn how things work behind the scenes.
 
@@ -80,7 +82,7 @@ At some point, you will see the screen below and the script will stop and wait f
 
 Follow the next instructions to configure Gogs and when finished, return to the script in the terminal, and press Enter to resume the configuration of the other containers:
 
-3. **Configure local Git server**
+4. **Configure local Git server**
 
 The Gogs container is running on *http://localhost:10880*. Copy past that hostname:port on your browser and start the configuration. The first time you run it, you will get a special screen for the database set-up. Make sure that you select **SQLite3** and keep the **Path** as it is as illustrated in the next figure.
 
@@ -165,7 +167,7 @@ Figure gogs9
 
 
 
-4. **Configuring Jenkins**
+5. **Configuring Jenkins**
 
 This Jenkins container has all the CI/CD pipelines already configured for you to use. All is managed as code from the code base repository  (the buildcuriosity.groovy and deploycuriosity.groovy). Navigate with your browser to localhost:8080 and sign in with the user we prepared for you which is **admin** with password **123**. Skip all the steps related to plugin installation or related to the creation of new users.
 
@@ -288,7 +290,7 @@ kubectl -n curiositymonolith port-forward svc/curiositymonolith-service-lb 9000:
 
 And that's it!!
 
-The application is running and the CICD with Jenkins its ready! 
+The application is running and the CICD with Jenkins is ready! 
 Try to clone the code and make some changes to see the CI/CD being triggered now!
 
 Have fun!
