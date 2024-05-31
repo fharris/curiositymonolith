@@ -11,15 +11,15 @@ In the previous step, you manually installed the application and tested it with 
 
 *Access to a Kubernetes cluster*
 
-*kubectl* 
+*kubectl* installed
 
-*git* 
+*git* installed
 
-*jq*
+*jq* installed (optional)
 
-*MySQL client*
+*MySQL client* installed
 
-*docker*
+*docker* installed
 
 
 
