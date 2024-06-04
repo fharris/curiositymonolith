@@ -2,9 +2,6 @@
 
 echo "Starting local dev configuration"
 
-echo "ATTENTION FERNANDO: -->>> ***** STILL NEED TO LIMIT THE RESOURCES USED BY CONTAINERS!!!"
-echo "ATTENTION FERNANDO: -->>> ***** STILL NEED TO put host or IPs as variables across the script!!!"
-
 echo Running in $SHELL
 
 echo "+------------------------------------+"
