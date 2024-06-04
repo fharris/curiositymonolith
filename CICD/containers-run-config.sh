@@ -73,7 +73,6 @@ docker exec -it jenkins sh -c 'cd $HOME;sleep 30;./import-jobs.sh'
 
 echo Configuring MySQL...
 #MySQL container should be up...time to configure database
-# copy the files and docker exec instead of running mysql --> https://stackoverflow.com/questions/22907231/how-to-copy-files-from-host-to-docker-container
 mysql -h 127.0.0.1 --port 9306 -u root -pmySQLpword#2023 < ./databaseconfig/create-curiositydb-resources.sql
 mysql -h 127.0.0.1 --port 9306 -u curiosity -pWelcome#1 -e 'SHOW DATABASES;'
 
