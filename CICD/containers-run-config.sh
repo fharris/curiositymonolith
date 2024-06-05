@@ -45,13 +45,15 @@ echo "+-------------------------------------+"
 
 echo Configuring Gogs...
 
-echo "+---------------------------------------------------------------------------+"
-echo "|    **ATTENTION**                                                           |"
-echo "| Open your browser in localhost:10880 and configure Gogs before continuing.|"
-echo "| Follow the steps explained in Github and press the blue button to install|"
-echo "| When you're done return to this script and press *ENTER* to continue      |"
-echo "|                                                                           |"
-echo "+---------------------------------------------------------------------------+"
+echo "+----------------------------------------------------------------------------+"
+echo "|                                                                            |"
+echo "|                           **ATTENTION**                                    |"
+echo "|                                                                            |"
+echo "| Open your browser on localhost:10880 and configure Gogs before continuing. |"
+echo "| Follow the steps explained on GitHub and press the blue button to install  |"
+echo "| When you're done return to this script and press *ENTER* to continue       |"
+echo "|                                                                            |"
+echo "+----------------------------------------------------------------------------+"
 read -p ""
 
 docker exec -it gogs sh -c \ "echo 'LOCAL_NETWORK_ALLOWLIST = *' >> /data/gogs/conf/app.ini; chmod 777 /data/gogs/conf/app.ini; "
