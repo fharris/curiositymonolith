@@ -70,7 +70,7 @@ docker exec -it docker-dind sh -c 'docker info'
 
 echo Configuring Jenkins...
 echo "Running configuration script inside jenkins...be patient...wait a couple of minutes!"
-docker exec -it jenkins sh -c 'cd $HOME;sleep 30;./import-jobs.sh'
+docker exec -it jenkins-for-monolith sh -c 'cd $HOME;sleep 30;./import-jobs.sh'
 
 
 echo Configuring MySQL...
